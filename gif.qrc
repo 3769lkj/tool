@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/new/prefix1">
+        <file>C:/Users/zhanglongfei/Desktop/gif/gif1.gif</file>
+        <file>C:/Users/zhanglongfei/Desktop/gif/gif2.gif</file>
+        <file>C:/Users/zhanglongfei/Desktop/gif/gif3.gif</file>
+        <file>C:/Users/zhanglongfei/Desktop/gif/gif4.gif</file>
+    </qresource>
+</RCC>

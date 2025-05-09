@@ -3,9 +3,11 @@
 #include <QPaintEvent>
 
 
-Widget::~Widget() {}
+Widget::~Widget() {
 
-void Widget::paintEvent(QPaintEvent *event)
+}
+
+/*void Widget::paintEvent(QPaintEvent *event)
 {
     QPainter painter(this);
     if (!images.isEmpty()) {//判断是否还有图片
@@ -14,5 +16,12 @@ void Widget::paintEvent(QPaintEvent *event)
     QWidget::paintEvent(event);
 }
 
-
-
+*/
+void Widget::paintEvent(QPaintEvent *) {
+    QPainter painter(this);
+    if (!images.isEmpty()) {
+        // 将图片绘制在菜单栏下方（避免覆盖菜单）
+        QRect imageRect(0, menuBar->height(), width(), height() - menuBar->height());
+        painter.drawPixmap(imageRect, images[currentImageIndex].scaled(imageRect.size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
+    }
+}
