@@ -114,7 +114,8 @@ private slots:
           update();
       }
 
-    void openImage() {
+      //自动识别文件photo1，然后顺次播放photo2,hoto3...
+      void openImage() {
         QString fileName = QFileDialog::getOpenFileName(
             this,
             "Open Image",
@@ -124,7 +125,7 @@ private slots:
         if (!fileName.isEmpty()) {
             QFileInfo fi(fileName);
             QString dirPath = fi.absolutePath();
-            QString baseName = fi.completeBaseName(); // photo1
+            QString baseName = fi.completeBaseName(); // photo1  自动识别文件
             QRegularExpression re("^" + QRegularExpression::escape(baseName).replace(QRegularExpression("\\d+$"), "") + "\\d+\\.(png|jpg|bmp|jpeg)$");
 
             QDir dir(dirPath);
