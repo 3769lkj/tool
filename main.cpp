@@ -31,8 +31,11 @@ public:
     }};
 int main(int argc, char *argv[])
 {
+    QFont font("Comic Sans MS", 10);//字体样式
+
     QApplication a(argc, argv);
     Widget w;
+    a.setFont(font);
     w.show();
     return a.exec();
 }
